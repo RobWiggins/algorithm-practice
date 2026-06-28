@@ -19,8 +19,5 @@ function intersection(nums1: number[], nums2: number[]): number[] {
         }
     }
     
-    console.log('intersectionSet', intersectionSet)
-    
     return Array.from(intersectionSet)
-
 };
