@@ -1,5 +1,4 @@
 function thirdMax(nums: number[]): number {
-    nums.sort()
     const noDupesArr = [...new Set(nums)].sort((a, b) => a - b)
 
     if (noDupesArr.length < 3) {
