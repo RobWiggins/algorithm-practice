@@ -13,7 +13,6 @@
  */
 
 function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
-  let sum = 0
   
   function compareSum(node: TreeNode | null, remaining: number): boolean {
 
