@@ -10,14 +10,10 @@ function isAnagram(s: string, t: string): boolean {
     const tStrLength = t.length
 
     for (let i = 0; i < t.length; i++) {
-        console.log('t[i]', t[i])
 
         let charAt = str.indexOf(t[i])
 
-        console.log('charAt', charAt)
-
         if (charAt !== -1) {
-            remaining.push(str[i])
             str.splice(charAt, 1)
         }
     }
