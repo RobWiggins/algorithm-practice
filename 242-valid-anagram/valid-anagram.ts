@@ -6,17 +6,16 @@ function isAnagram(s: string, t: string): boolean {
 
     let remaining = []
 
-    let str = s.split('')
-    const tStrLength = t.length
+    let sArr = s.split('')
 
     for (let i = 0; i < t.length; i++) {
 
-        let charAt = str.indexOf(t[i])
+        let charAt = sArr.indexOf(t[i])
 
         if (charAt !== -1) {
-            str.splice(charAt, 1)
+            sArr.splice(charAt, 1)
         }
     }
 
-    return str.length === 0
+    return sArr.length === 0
 };
