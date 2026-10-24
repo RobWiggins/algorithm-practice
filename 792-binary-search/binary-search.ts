@@ -14,10 +14,7 @@ function search(nums: number[], target: number): number {
             low = mid + 1
         } else if (nums[mid] > target) {
             high = mid - 1
-            // mid = mid - Math.floor((mid - low) / 2)
         }
-
-        // console.log(low, mid, high)
     }
 
     return -1
