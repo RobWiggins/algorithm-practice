@@ -16,12 +16,19 @@ function hasCycle(head: ListNode | null): boolean {
 
     while (head !== null && !cycle) {
                 
-        if (!nodeSet.has(head)) {
-          nodeSet.add(head)
-        } else {
+        if (nodeSet.has(head)) {
             cycle = true
             break
+        } else {
+            nodeSet.add(head)
         }
+
+        // if (!nodeSet.has(head)) {
+        //   nodeSet.add(head)
+        // } else {
+        //     cycle = true
+        //     break
+        // }
         
         head = head.next
     }
