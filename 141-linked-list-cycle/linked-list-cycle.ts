@@ -15,7 +15,7 @@ function hasCycle(head: ListNode | null): boolean {
     const nodeSet =  new Set()
 
     while (head !== null && !cycle) {
-                
+
         if (nodeSet.has(head)) {
             cycle = true
             break
@@ -23,13 +23,6 @@ function hasCycle(head: ListNode | null): boolean {
             nodeSet.add(head)
         }
 
-        // if (!nodeSet.has(head)) {
-        //   nodeSet.add(head)
-        // } else {
-        //     cycle = true
-        //     break
-        // }
-        
         head = head.next
     }
 
