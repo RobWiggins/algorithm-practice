@@ -23,9 +23,6 @@ function diameterOfBinaryTree(root: TreeNode | null): number {
 
         let leftHeight = traverse(root.left)
         let rightHeight = traverse(root.right)
-   
-        let thisMax = 0
-        let max = 0
 
         // Longest path passing through this node
         const thisDiameter = leftHeight + rightHeight
