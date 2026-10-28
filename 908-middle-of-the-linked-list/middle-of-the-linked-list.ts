@@ -23,7 +23,5 @@ function middleNode(head: ListNode | null): ListNode | null {
         head = head.next
     }
 
-    console.log(nodeMap)
-
    return nodeMap.get(Math.floor((idx) / 2))
 };
