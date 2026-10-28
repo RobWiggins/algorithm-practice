@@ -15,7 +15,6 @@ function middleNode(head: ListNode | null): ListNode | null {
 
     const nodeMap = new Map<number, ListNode>()
     let idx = 0
-    let prev = null
 
     while (head !== null) {
         nodeMap.set(idx, head)
