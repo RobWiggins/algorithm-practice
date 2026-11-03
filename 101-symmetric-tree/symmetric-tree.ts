@@ -27,8 +27,6 @@ function isSymmetric(root: TreeNode | null): boolean {
             return false
         }
 
-        console.log(nodeLeft, nodeRight)
-
         if (nodeLeft.val !== nodeRight.val) {
             return false
         } else {
