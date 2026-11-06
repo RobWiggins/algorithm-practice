@@ -12,13 +12,4 @@ function removeDuplicates(nums: number[]): number {
 
     return nums.length
 
-
-    // const numsSet = new Set(nums)
-
-    // const distinctSet = [...numsSet].sort((a, b) => a - b)
-
-    // console.log('distinctSet', distinctSet)
-    // console.log('distinctSet.length', distinctSet.length)
-
-    // return distinctSet.length
 };
