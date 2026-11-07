@@ -14,10 +14,6 @@
 
 function minDepth(root: TreeNode | null): number {
     
-    if (root === null) { // todo can probably remove
-        return 0
-    }
-
     function traverse(node: TreeNode | null): number {
 
         if (node === null) {
