@@ -1,8 +1,6 @@
 function generate(numRows: number): number[][] {
     const arr: number[][] = [[]]
 
-    let rowIdx = 0
-
     if (numRows === 0) {
         return []
     } else if (numRows === 1) {
@@ -19,10 +17,8 @@ function generate(numRows: number): number[][] {
 
         newRow.push(1)
  
-       arr.push(newRow)
+        arr.push(newRow)
 
-       return arr
+        return arr
     }
-
-    // return arr
 };
