@@ -6,7 +6,6 @@ function addDigits(num: number): number {
 
     while (num >= 10) {
         let digits = getDigits(num)
-        console.log(digits)
 
         num = digits.reduce((sum, num) => sum + num, 0)
 
