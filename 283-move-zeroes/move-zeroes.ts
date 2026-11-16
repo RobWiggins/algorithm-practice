@@ -8,6 +8,4 @@ function moveZeroes(nums: number[]): void {
             nums.push(0)
         }
     }
-
-    console.log('nums', nums)
 };
