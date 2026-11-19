@@ -5,8 +5,6 @@ function numberOfSteps(num: number): number {
     // begin recursive function
     function numberToZero(n) {
         if (n === 0) {
-            n = n - 1
-            // steps++
             return steps
             } else if (n === 2) {
             n = 1
