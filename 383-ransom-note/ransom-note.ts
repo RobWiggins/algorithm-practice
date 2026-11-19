@@ -1,23 +1,16 @@
 function canConstruct(ransomNote: string, magazine: string): boolean {
-    // return false if magazine char length is less than ransomNote
-    if (magazine.length < ransomNote.length) {
-        return false
+    const magazineChars = new Map<string, number>()
+
+    for (let char of magazine) {
+        magazineChars.set(char, magazineChars.get(char) + 1 || 1)
     }
 
-    const magCharMap = new Map<String, number>()
-    for (const char of magazine) {
-        magCharMap.set(char, (magCharMap.get(char) || 0) + 1)
-    }
-
-    for (const ransomChar of ransomNote) {
-        const remaining = magCharMap.get(ransomChar) ?? 0
-
-        // Character is missing or all copies have been used
-        if (remaining === 0) {
+    for (let char of ransomNote) {
+        if (magazineChars.get(char)) {
+            magazineChars.set(char, magazineChars.get(char) - 1)
+        } else {
             return false
         }
-
-        magCharMap.set(ransomChar, remaining - 1)
     }
 
     return true
