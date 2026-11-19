@@ -11,16 +11,21 @@
  */
 
 function middleNode(head: ListNode | null): ListNode | null {
-    // brute force, count how many nodes are in list
+    
+    let fastPtr = head
+    let slowPtr = head
 
-    const nodeMap = new Map<number, ListNode>()
-    let idx = 0
+    while (fastPtr !== null && slowPtr !== null) {
 
-    while (head !== null) {
-        nodeMap.set(idx, head)
-        idx++
-        head = head.next
+        if (fastPtr.next === null) {
+            fastPtr = fastPtr.next
+            continue
+        }
+
+        slowPtr = slowPtr.next
+        fastPtr = fastPtr.next.next
     }
 
-   return nodeMap.get(Math.floor((idx) / 2))
+    return slowPtr
+
 };
