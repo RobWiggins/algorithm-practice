@@ -1,37 +1,35 @@
-/**
- * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
- * }
- */
-
 function minDepth(root: TreeNode | null): number {
-
-    function traverse(node: TreeNode | null): number {
-
-        if (node === null) {
-            return 0
-        }
-
-        let leftHeight = traverse(node.left)
-        let rightHeight = traverse(node.right)
-
-        if (node.left === null) {
-            return rightHeight + 1
-        }
-        if (node.right === null) {
-            return leftHeight + 1
-        }
-
-        return Math.min(leftHeight, rightHeight) + 1
+    if (root === null) {
+        return 0;
     }
 
-    return traverse(root)
-};
+    const queue: TreeNode[] = [root];
+    let depth = 1;
+
+    while (queue.length > 0) {
+        // How many nodes are on the current level?
+        const levelSize = queue.length;
+
+        for (let i = 0; i < levelSize; i++) {
+            const node = queue.shift()!;
+
+            // The first leaf we find has the minimum depth
+            if (node.left === null && node.right === null) {
+                return depth;
+            }
+
+            if (node.left) {
+                queue.push(node.left);
+            }
+
+            if (node.right) {
+                queue.push(node.right);
+            }
+        }
+
+        // Finished this level; move to the next
+        depth++;
+    }
+
+    return 0;
+}
